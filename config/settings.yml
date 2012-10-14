@@ -28,10 +28,6 @@ price:  19.95
 payment_description: "This is what will appear on your manage.stripe.com dashboard"
 
 # Stripe settings -- you'll need a Stripe account, sign up here --> https://manage.stripe.com/register
-stripe_test_publishable_key: 'YOUR-STRIPE-TEST-PUBLISHABLE-KEY'
-stripe_test_secret_key: 'YOUR-STRIPE-TEST-SECRET-KEY'
-stripe_live_publishable_key: 'YOUR-STRIPE-LIVE-PUBLISHABLE-KEY'
-stripe_live_secret_key: 'YOUR-STRIPE-LIVE-SECRET-KEY'
 # Do you want to use Stripe in Live or Test mode? 'live' or 'test'
 stripe_payments_mode: 'test'
 
