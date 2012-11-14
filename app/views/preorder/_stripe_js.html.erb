@@ -3,7 +3,7 @@
   $(document).ready(function() {
     <% if Settings.stripe_payments_mode == 'test' %>
       Stripe.setPublishableKey("<%= Settings.stripe_test_publishable_key %>");
-    <% elsif settings.stripe_payments_mode == 'live' %>
+    <% elsif Settings.stripe_payments_mode == 'live' %>
       Stripe.setPublishableKey("<%= Settings.stripe_live_publishable_key %>");
     <% end %>
     function stripeResponseHandler(status, response) {
