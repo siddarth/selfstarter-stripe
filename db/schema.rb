@@ -11,27 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121004072706) do
+ActiveRecord::Schema.define(:version => 20130811210951) do
 
   create_table "orders", :id => false, :force => true do |t|
+    t.string   "token"
+    t.string   "transaction_id"
     t.string   "address_line1"
     t.string   "address_line2"
     t.string   "city"
     t.string   "state"
-    t.string   "country"
     t.string   "zip"
-    t.string   "phone"
+    t.string   "country"
     t.string   "status"
-    t.string   "order_number"
-    t.decimal  "shipping"
-    t.string   "tracking_number"
-    t.string   "stripe_customer_id"
-    t.string   "name"
-    t.decimal  "price"
+    t.string   "number"
     t.string   "uuid"
     t.string   "user_id"
+    t.decimal  "price"
+    t.decimal  "shipping"
+    t.string   "tracking_number"
+    t.string   "phone"
+    t.string   "name"
+    t.date     "expiration"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.integer  "order_number"
+    t.string   "stripe_customer_id"
   end
 
   create_table "users", :force => true do |t|
