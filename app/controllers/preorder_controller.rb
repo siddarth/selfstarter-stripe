@@ -32,7 +32,7 @@ class PreorderController < ApplicationController
     @order.country = params[:country]
     @order.save!
 
-    redirect_to root_url
+    redirect_to :action => :share, :uuid => @order.uuid
   end
 
   def share
