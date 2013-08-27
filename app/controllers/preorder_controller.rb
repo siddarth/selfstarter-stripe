@@ -18,19 +18,20 @@ class PreorderController < ApplicationController
     )
 
     # Create an order for this user.
-    @order = Order.generate
-    @order.stripe_customer_id = customer.id
-    @order.name = Settings.product_name
-    @order.price = Settings.price
-    @order.user_id = @user.id
-    @order.address_line1 = params[:address_line1]
-    @order.address_line2 = params[:address_line2]
-    @order.city = params[:city]
-    @order.state = params[:state]
-    @order.phone = params[:phone]
-    @order.zip = params[:address_zip]
-    @order.country = params[:country]
-    @order.save!
+    @order = Order.generate.tap do |order|
+      order.stripe_customer_id = customer.id
+      order.name = Settings.product_name
+      order.price = Settings.price
+      order.user_id = @user.id
+      order.address_line1 = params[:address_line1]
+      order.address_line2 = params[:address_line2]
+      order.city = params[:city]
+      order.state = params[:state]
+      order.phone = params[:phone]
+      order.zip = params[:address_zip]
+      order.country = params[:country]
+    end.save!
+
 
     redirect_to root_url
   end

@@ -12,8 +12,8 @@ class Order < ActiveRecord::Base
   self.primary_key = 'uuid'
 
   def self.generate
-  	o = self.new
-  	o.order_number = Order.next_order_number || 1
+    o = self.new
+    o.order_number = Order.next_order_number || 1
     o
   end
 
